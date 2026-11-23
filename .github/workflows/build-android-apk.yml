@@ -27,8 +27,9 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v4
-        with:
-          packages: 'platforms;android-37,build-tools;36.0.0'
+
+      - name: Install Android SDK packages
+        run: sdkmanager 'platforms;android-37' 'build-tools;36.0.0'
 
       - name: Set up Gradle 9.6
         uses: gradle/actions/setup-gradle@v6
